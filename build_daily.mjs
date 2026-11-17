@@ -5,7 +5,7 @@ import { FileBlob, SpreadsheetFile, Workbook } from "@oai/artifact-tool";
 const FONT = "Arial";
 const HEADER = ["时间戳", "今日要点", "热门开源项目", "值得关注的讨论/观点", "来源链接", "简要说明"];
 const outDir = path.join(process.cwd(), "output");
-const targetFile = process.env.DAILY_XLSX || "C:\\Users\\31224\\Desktop\\AI资讯每日汇总.xlsx";
+const targetFile = process.env.DAILY_XLSX || path.join(process.env.USERPROFILE || "", "Desktop", "AI资讯每日汇总.xlsx");
 
 const inputPath = process.argv[2] || path.join(process.cwd(), "input.json");
 const input = JSON.parse(await fs.readFile(inputPath, "utf8"));

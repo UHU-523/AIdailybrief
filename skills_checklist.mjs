@@ -6,13 +6,14 @@ const FONT = "Arial";
 const outDir = path.join(process.cwd(), "output");
 
 // 按需修改为你的技能目录
+const home = process.env.USERPROFILE || process.env.HOME || "";
 const USER_ROOTS = [
-  "C:\\Users\\31224\\.codex\\skills",
-  "C:\\Users\\31224\\.agents\\skills",
+  path.join(home, ".codex", "skills"),
+  path.join(home, ".agents", "skills"),
 ];
 const BUNDLED_ROOTS = [
-  "C:\\Users\\31224\\.codex\\plugins\\cache\\openai-bundled",
-  "C:\\Users\\31224\\.codex\\plugins\\cache\\openai-primary-runtime",
+  path.join(home, ".codex", "plugins", "cache", "openai-bundled"),
+  path.join(home, ".codex", "plugins", "cache", "openai-primary-runtime"),
 ];
 const BUNDLED_WHITELIST = new Set([
   "computer-use", "visualize", "documents", "pdf", "presentations",
