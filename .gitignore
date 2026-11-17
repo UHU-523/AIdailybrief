@@ -1,0 +1,7 @@
+node_modules/
+output/
+preview.png
+*.inspect.ndjson
+cookies.txt
+config.json
+input.json
